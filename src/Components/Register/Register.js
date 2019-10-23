@@ -32,8 +32,8 @@ class Register extends Component {
               'Content-Type': 'application/json'
             }
           })
-        .then(response => response.json()).then(data=>console.log(data))
-
+        .then(response => response.json()).then(data => console.log(data))
+        .then(data=>data.user.token ? this.props.history.push('/Login'): console.log(data)) 
     }
 
     handleChange = (e) => {
