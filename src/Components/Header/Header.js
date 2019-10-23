@@ -4,6 +4,7 @@ import "./Header.css";
 import "../Register/Register";
 import "../Login/Login";
 import "../Home/Home";
+import "../NewArticle/NewArticle";
 
 
 const logoStyle = {textDecoration: "none", color: "#5cb85c"};
@@ -29,7 +30,7 @@ class Header extends Component {
                     localStorage.Token?   // if the user is logged in, display logout
                     <div>
                         <button onClick={this.handleLogout} className="btn-logout">Logout</button>
-                        {/* <Link to="/edit" */}
+                        <Link to="/NewArticle">New Article</Link>
                     </div>
                     :
 
