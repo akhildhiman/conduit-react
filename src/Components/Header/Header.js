@@ -10,6 +10,14 @@ const logoStyle = {textDecoration: "none", color: "#5cb85c"};
 
 class Header extends Component {
 
+    handleLogout = () => {
+        localStorage.clear();
+        this.redirect()
+    }
+
+    redirect = () => {
+        this.props.history.push("/")
+    }
     
 
     render () {
@@ -20,14 +28,14 @@ class Header extends Component {
                 {
                     localStorage.Token?   // if the user is logged in, display logout
                     <div>
-                        <button>Logout</button>
+                        <button onClick={this.handleLogout} className="btn-logout">Logout</button>
                     </div>
                     :
 
                     <div>
                         <Link to="/Register">Sign up</Link>
                         <Link to="/Login">Sign in</Link>
-                     </div>
+                    </div>
                 }
             </div>  
         )

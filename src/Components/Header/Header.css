@@ -7,3 +7,10 @@
 .link {
     text-decoration: none;
 }
+.btn-logout {
+    border: none;
+    background: transparent;
+    color: red;
+    font-weight: 600;
+    cursor: pointer;
+}
