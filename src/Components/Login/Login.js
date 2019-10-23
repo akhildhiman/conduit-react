@@ -1,12 +1,10 @@
 import React, { Component } from "react"
 
 class Login extends Component {
-
         state = {
             email: "",
-            password: ""
+            password: "",
         }
-    
 
     handleChange = (e) => {
         const { name, value } = e.target
@@ -42,12 +40,12 @@ class Login extends Component {
             }
         })
         .then(response => response.json())
-        .then(data => data.user.token ? this.storeTokenAndRedirect(data.user.token)
+        .then(data => data.user.token ? this.storeTokenAndRedirect(data.user.token) // // if the user has token, call the storeTokenAndRedirect function
         :
          console.log(data))
         }
-
-
+        
+        
     render() {
         return (
             <form className="form">

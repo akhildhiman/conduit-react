@@ -2,8 +2,6 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom";
 import "./Register.css"
 
-
-
 class Register extends Component {
     constructor() {
         super()
@@ -32,8 +30,8 @@ class Register extends Component {
               'Content-Type': 'application/json'
             }
           })
-        .then(response => response.json()).then(data => console.log(data))
-        .then(data=>data.user.token ? this.props.history.push('/Login'): console.log(data)) 
+        .then(response => response.json())
+        .then(data => data.user.token ? this.props.history.push('/Login'): console.log(data))  // if the user has token redirect to the login page
     }
 
     handleChange = (e) => {

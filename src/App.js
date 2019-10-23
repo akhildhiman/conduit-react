@@ -7,10 +7,6 @@ import Home from './Components/Home/Home';
 import { Route,Switch, BrowserRouter as Router } from "react-router-dom";
 
 class App extends React.Component {
-  constructor() {
-    super()
-  }
-
   render() {
     return (
       <>
