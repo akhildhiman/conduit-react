@@ -6,3 +6,7 @@
     background: #5cb85c;
     padding: 7px 7px;
 }
+.article-list {
+    display: flex;
+    justify-content: center;
+}

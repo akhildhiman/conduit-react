@@ -14,7 +14,7 @@ class Home extends Component {
     }
 
     render () {
-        // console.log(this.state.articlesArray)
+        console.log(this.state.articlesArray)
         return (
             // <Header />
             <div className="home">
@@ -22,9 +22,10 @@ class Home extends Component {
                 <p>A place to share knowledge</p>
                 {this.state.articlesArray && this.state.articlesArray.map(article => {
                     return (
-                        <div>
-                            {article.title}
-                            {article.auhtor}
+                        <div className="article-list">
+                            {article.author.username} <br></br>
+                            {article.title} <br></br>
+                            {article.body} <br></br> <br></br>
                         </div>
                     )
                 })}

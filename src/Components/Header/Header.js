@@ -7,7 +7,7 @@ import "../Home/Home";
 import "../NewArticle/NewArticle";
 
 
-const logoStyle = {textDecoration: "none", color: "#5cb85c"};
+const logoStyle = { textDecoration: "none", color: "#5cb85c" };
 
 class Header extends Component {
 
@@ -19,29 +19,29 @@ class Header extends Component {
     redirect = () => {
         this.props.history.push("/")
     }
-    
 
-    render () {
+
+    render() {
         return (
             <div className="header">
-                <Link style={logoStyle} to="/">Conduit</Link> 
+                <Link style={logoStyle} to="/">Conduit</Link>
                 <Link to="/">Home</Link>
                 {
-                    localStorage.Token?   // if the user is logged in, display logout
-                    <div>
-                        <button onClick={this.handleLogout} className="btn-logout">Logout</button>
-                        <Link to="/NewArticle">New Article</Link>
-                    </div>
-                    :
+                    localStorage.Token ?   // if the user is logged in, display logout
+                        <div>
+                            <button onClick={this.handleLogout} className="btn-logout">Logout</button>
+                            <Link to="/NewArticle">New Article</Link>
+                        </div>
+                        :
 
-                    <div>
-                        <Link to="/Register">Sign up</Link>
-                        <Link to="/Login">Sign in</Link>
-                    </div>
+                        <div>
+                            <Link to="/Register">Sign up</Link>
+                            <Link to="/Login">Sign in</Link>
+                        </div>
                 }
-            </div>  
+            </div>
         )
-  }
+    }
 }
 
 

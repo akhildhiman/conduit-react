@@ -12,13 +12,13 @@ class App extends React.Component {
     return (
       <>
         <Router>
-        <Header />
-        <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/Register" component={Register} />
-            <Route path="/Login" component={Login} />
-            <Route path="/NewArticle" component={NewArticle} />
-        </Switch>
+            <Header />
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/Register" component={Register} />
+                <Route path="/Login" component={Login} />
+                <Route path="/NewArticle" component={NewArticle} />
+            </Switch>
         </Router>
       </>
     )
