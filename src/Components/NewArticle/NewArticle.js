@@ -16,7 +16,7 @@ class NewArticle extends Component {
     }
 
     handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         const body = {
             article: {
