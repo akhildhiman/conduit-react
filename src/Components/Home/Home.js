@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./Home.css"
+import {Link} from "react-router-dom"
+
 // import Header from "../Header/Header";
+import SingleArticle from "../SingleArticle/SingleArticle"
 
 class Home extends Component {
     state = {
@@ -23,9 +26,12 @@ class Home extends Component {
                 {this.state.articlesArray && this.state.articlesArray.map(article => {
                     return (
                         <div className="article-list">
-                            {article.author.username} <br></br>
-                            {article.title} <br></br>
-                            {article.body} <br></br> <br></br>
+                            <Link to={`/SingleArticle/${article.slug}`}> 
+                                {/* <img src= {article.author.image} /> */}
+                                {article.author.username} <br></br>
+                                {article.title} <br></br>
+                                {article.body} <br></br> <br></br>
+                            </Link>
                         </div>
                     )
                 })}
