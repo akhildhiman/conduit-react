@@ -17,13 +17,13 @@ class NewArticle extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-
+        
         const body = {
             article: {
                 title: this.state.title,
                 description: this.state.description,
                 body: this.state.body,
-                tagList: [],
+                // tagList: [],
             }
         }
 
@@ -31,11 +31,12 @@ class NewArticle extends Component {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
+                "Authorization": `Token ${localStorage.Token}`, 
                 "Content-type": "application/json"
             }
         })
         .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => data.article.slug ? this.props.history.push("/"): console.log(data)) //if slug is there, redirect to home page
     }
 
     render() {
