@@ -10,3 +10,16 @@
     display: flex;
     justify-content: center;
 }
+.tags {
+    text-align: right;
+    color: rgb(117, 100, 94);
+}
+button {
+    color: gray;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    color: red;
+}

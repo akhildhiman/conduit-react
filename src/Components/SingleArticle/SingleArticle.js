@@ -3,7 +3,7 @@ import "../NewArticle/NewArticle"
 
 class SingleArticle extends Component {
     state = {
-        article: {}
+        article: null
     }
 
     componentDidMount() {
@@ -15,12 +15,15 @@ class SingleArticle extends Component {
 
     render() {
         const article = this.state.article
+        console.log(article)
         return (
-            <div>{article && article.title}</div>
+            <div>
+                {article && article.title}
+                {article && article.createdAt.toLocaleString()}
+                {article && article.author.username}
+            </div>
         )
     }
-
-
 }
 
 

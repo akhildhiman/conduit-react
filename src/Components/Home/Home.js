@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import "./Home.css"
 import {Link} from "react-router-dom"
 
-// import Header from "../Header/Header";
-import SingleArticle from "../SingleArticle/SingleArticle"
-
 class Home extends Component {
     state = {
         articlesArray: []
@@ -23,6 +20,11 @@ class Home extends Component {
             <div className="home">
                 <h1>conduit</h1>
                 <p>A place to share knowledge</p>
+                <div> 
+                    <Link to path="/tags">coffee</Link>
+                    <Link to path="/tags">test</Link>
+                    <Link to path="/tags">butt</Link>
+                </div>
                 {this.state.articlesArray && this.state.articlesArray.map(article => {
                     return (
                         <div className="article-list">
