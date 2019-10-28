@@ -10,14 +10,21 @@ class Tags extends Component {
         var tag = this.props.match.params.tag
         fetch(`https://conduit.productionready.io/api/articles/?tag=${tag}`)
             .then(response => response.json())
-            .then(data => this.setState({ tagArticles: data }))
+            .then(data => this.setState({ tagArticles: data.articles }))
     }
 
     render() {
         console.log(this.state.tagArticles)
+        const tagArticle = this.state.tagArticles
+
         return (
-            <div>
-                
+            <div>{
+                tagArticle && tagArticle.map(article => {
+                    return (
+                        <h1>{article.title}</h1>
+                    )
+                })
+            }
             </div>
         )
     }
