@@ -5,7 +5,7 @@ class NewArticle extends Component {
         title: "",
         description: "",
         body: "",
-        tagList: []
+        // tagList: []
     }
 
     handleChange = (e) => {
@@ -17,7 +17,6 @@ class NewArticle extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        
         const body = {
             article: {
                 title: this.state.title,
@@ -31,12 +30,12 @@ class NewArticle extends Component {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
-                "Authorization": `Token ${localStorage.Token}`, 
+                "Authorization": `Token ${localStorage.Token}`,
                 "Content-type": "application/json"
             }
         })
-        .then(response => response.json())
-            .then(data => data.article.slug ? this.props.history.push("/"): console.log(data)) //if slug is there, redirect to home page
+            .then(response => response.json())
+            .then(data => data.article.slug ? this.props.history.push("/") : console.log(data)) //if slug is there, redirect to home page
     }
 
     render() {
@@ -44,31 +43,31 @@ class NewArticle extends Component {
             <div className="new-article">
 
                 <input onChange={this.handleChange}
-                type="text"
-                placeholder="Article Title"
-                name="title"
-                value={this.state.title} />
+                    type="text"
+                    placeholder="Article Title"
+                    name="title"
+                    value={this.state.title} />
                 <br></br>
 
                 <input onChange={this.handleChange}
-                type="text"
-                placeholder="What's this article about"
-                name="description"
-                value={this.state.description} />
+                    type="text"
+                    placeholder="What's this article about"
+                    name="description"
+                    value={this.state.description} />
                 <br></br>
 
                 <textarea onChange={this.handleChange}
-                type="text"
-                placeholder="Write your article"
-                name="body"
-                value={this.state.body} />
+                    type="text"
+                    placeholder="Write your article"
+                    name="body"
+                    value={this.state.body} />
                 <br></br>
 
                 <input onChange={this.handleChange}
-                type="text"
-                placeholder="Enter tags"
-                name="tagList"
-                value={this.state.tagList} />
+                    type="text"
+                    placeholder="Enter tags"
+                    name="tagList"
+                    value={this.state.tagList} />
                 <br></br>
 
                 <button onClick={this.handleSubmit}>Publish Article</button>
@@ -77,8 +76,6 @@ class NewArticle extends Component {
     }
 
 }
-
-
 
 
 export default NewArticle

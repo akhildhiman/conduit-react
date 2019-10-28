@@ -11,7 +11,7 @@ class Tags extends Component {
     //             .then(data => console.log(data))
     // }
 
-    render () {
+    render() {
         return (
             <div></div>
         )
