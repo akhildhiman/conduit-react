@@ -3,20 +3,21 @@ import ListTags from "../ListTags/ListTags"
 
 class Tags extends Component {
     state = {
-        tagList: []
+        tagArticles: []
     }
 
     componentDidMount() {
         var tag = this.props.match.params.tag
         fetch(`https://conduit.productionready.io/api/articles/?tag=${tag}`)
             .then(response => response.json())
-            .then(data => this.setState({ tagList: data }))
+            .then(data => this.setState({ tagArticles: data }))
     }
 
     render() {
+        console.log(this.state.tagArticles)
         return (
             <div>
-
+                
             </div>
         )
     }
