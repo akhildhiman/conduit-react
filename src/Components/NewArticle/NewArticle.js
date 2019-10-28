@@ -5,7 +5,7 @@ class NewArticle extends Component {
         title: "",
         description: "",
         body: "",
-        // tagList: []
+        tagList: []
     }
 
     handleChange = (e) => {

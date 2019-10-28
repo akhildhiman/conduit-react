@@ -21,7 +21,7 @@ class App extends React.Component {
             <Route path="/Login" component={Login} />
             <Route path="/NewArticle" component={NewArticle} />
             <Route path="/SingleArticle/:slug" component={SingleArticle} />
-            <Route path="/Tags" component={Tags} />
+            <Route path="/Tags/:tag" component={Tags} />
           </Switch>
         </Router>
       </>
