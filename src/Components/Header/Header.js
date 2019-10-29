@@ -5,6 +5,7 @@ import "../Register/Register";
 import "../Login/Login";
 import "../Home/Home";
 import "../NewArticle/NewArticle";
+import "../Settings/Settings"
 
 
 const logoStyle = { textDecoration: "none", color: "#5cb85c", fontSize: "22px" };
@@ -28,11 +29,12 @@ class Header extends Component {
                 <Link style={logoStyle} to="/">conduit</Link>
                 {
                     localStorage.Token ?   // if the user is logged in, display logout
-                        <div>
+                        <div className="header-links">
                             <button onClick={this.handleLogout} className="btn-logout">Logout</button>
+                            <Link to="/">Home</Link>
                             <Link to="/NewArticle">New Article</Link>
                             {/* <button>Settings</button> */}
-                            <Link>Settings</Link>
+                            {<Link to="/Settings">Settings</Link>}
                         </div>
                         :
 

@@ -1,24 +1,28 @@
 /* .header {
-    text-decoration: none;
-    color: red;
-    display: flex;
-    justify-content: space-around;
+  text-decoration: none;
+  color: red;
+  display: flex;
+  justify-content: space-around;
 }
 .link {
-    text-decoration: none;
-}
-.btn-logout {
-    border: none;
-    background: transparent;
-    color: red;
-    font-weight: 600;
-    cursor: pointer;
+  text-decoration: none;
 } */
 
+.btn-logout {
+  border: none;
+  background: transparent;
+  color: red;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .header {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    color: #5cb85c;
-    font-weight: 700;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  color: #5cb85c;
+  font-weight: 700;
+}
+.header-links {
+    text-decoration: none;
 }

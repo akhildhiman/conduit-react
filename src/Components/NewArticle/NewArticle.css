@@ -1,3 +1,29 @@
 .new-article {
-    text-align: center;
+  text-align: center;
+}
+
+/* input {
+  border-radius: 5px;
+  width: 450px;
+  padding: 17px;
+  border: 1px solid rgb(199, 193, 193);
+  font-size: 20px;
+  color: rgb(75, 75, 72);
+} */
+
+button {
+  width: 120px;
+  padding: 20px;
+  background: #5cb85c;
+  font-size: 18px;
+  color: white;
+}
+
+.new-article-input {
+  border-radius: 5px;
+  width: 450px;
+  padding: 17px;
+  border: 1px solid rgb(199, 193, 193);
+  font-size: 20px;
+  color: rgb(75, 75, 72);
 }

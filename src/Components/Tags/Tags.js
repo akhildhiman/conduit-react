@@ -18,15 +18,25 @@ class Tags extends Component {
         const tagArticle = this.state.tagArticles
 
         return (
-            <div>{
-                tagArticle && tagArticle.map(article => {
-                    return (
-                        <div>
-                            {article.title}
-                        </div>
-                    )
-                })
-            }
+            <div className="article-container">
+                <div className="article-list">{
+                    tagArticle && tagArticle.map(article => {
+                        return (
+                            <div>
+                                <img className="user-image" src={article.author.image} />
+                                <span>{article.author.username}</span>
+                                <h2>{article.title}</h2>
+                                <h4>{article.description}</h4> <br></br> <br></br>
+                                <h6>Read more...</h6>
+                                {/* {
+                                    tagArticle && tagArticle.map
+                                } */}
+                                <hr></hr>
+                            </div>
+                        )
+                    })
+                }
+                </div>
             </div>
         )
     }

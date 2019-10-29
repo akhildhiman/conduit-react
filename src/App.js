@@ -8,6 +8,7 @@ import NewArticle from './Components/NewArticle/NewArticle';
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import SingleArticle from './Components/SingleArticle/SingleArticle';
 import Tags from './Components/Tags/Tags';
+import Settings from "./Components/Settings/Settings";
 
 class App extends React.Component {
   render() {
@@ -22,6 +23,7 @@ class App extends React.Component {
             <Route path="/NewArticle" component={NewArticle} />
             <Route path="/SingleArticle/:slug" component={SingleArticle} />
             <Route path="/Tags/:tag" component={Tags} />
+            <Route path="/Settings" component={Settings} />
           </Switch>
         </Router>
       </>

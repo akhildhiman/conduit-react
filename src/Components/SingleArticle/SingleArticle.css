@@ -1,3 +1,9 @@
 .article-banner {
-    background: "black"
+  background: "black";
+}
+
+.single-article-banner {
+  font-size: 22px;
+  background: #080808;
+  border: 1px black;
 }
