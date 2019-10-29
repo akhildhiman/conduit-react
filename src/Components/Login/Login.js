@@ -50,7 +50,7 @@ class Login extends Component {
             <div>
                 <div className="form-header">
                     <h1>Sign In</h1>
-                    <h4>Need an account ?</h4>
+                    <h4 style={{ color: "#5cb85c" }}>Need an account ?</h4>
                 </div>
                 <form className="form">
                     <input type="text"
@@ -67,7 +67,7 @@ class Login extends Component {
                         onChange={this.handleChange} />
                     <br></br>
 
-                    <button type="submit" onClick={this.handleSubmit}>Sign in</button>
+                    <button style={{ color: "white" }} type="submit" onClick={this.handleSubmit}>Sign in</button>
                 </form>
             </div>
         )

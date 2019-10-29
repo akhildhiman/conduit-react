@@ -7,7 +7,8 @@ import "../Home/Home";
 import "../NewArticle/NewArticle";
 
 
-const logoStyle = { textDecoration: "none", color: "#5cb85c" };
+const logoStyle = { textDecoration: "none", color: "#5cb85c", fontSize: "22px" };
+const linksStyle = { textDecoration: "none", color: "black", padding: "0 10px", color: "rgb(92,87,87)", fontWeight: "300" };
 
 class Header extends Component {
 
@@ -24,8 +25,7 @@ class Header extends Component {
     render() {
         return (
             <div className="header">
-                <Link style={logoStyle} to="/">Conduit</Link>
-                <Link to="/">Home</Link>
+                <Link style={logoStyle} to="/">conduit</Link>
                 {
                     localStorage.Token ?   // if the user is logged in, display logout
                         <div>
@@ -36,9 +36,10 @@ class Header extends Component {
                         </div>
                         :
 
-                        <div>
-                            <Link to="/Register">Sign up</Link>
-                            <Link to="/Login">Sign in</Link>
+                        <div className="header-links">
+                            <Link to="/" style={linksStyle}>Home</Link>
+                            <Link to="/Register" style={linksStyle}>Sign up</Link>
+                            <Link to="/Login" style={linksStyle}>Sign in</Link>
                         </div>
                 }
             </div>

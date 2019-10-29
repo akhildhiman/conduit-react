@@ -47,7 +47,7 @@ class Register extends Component {
             <div>
                 <div className="form-header">
                     <h1>Sign Up</h1>
-                    <h4>Have an account ?</h4>
+                    <h4 style={{ color: "#5cb85c" }}>Have an account ?</h4>
                 </div>
                 <form className="form">
 
@@ -73,10 +73,10 @@ class Register extends Component {
                     <br></br>
 
                     <div className="btn">
-                        <button type="submit" onClick={this.handleSubmit}>Signup</button><br></br>
+                        <button style={{ color: "white" }} type="submit" onClick={this.handleSubmit}>Signup</button><br></br>
                     </div>
 
-                    <Link to="/login">  Already an user? Login  </Link>
+                    <Link to="/login" style={{ textDecoration: "none", color: "green" }}>  Already an user? Login  </Link>
                 </form>
             </div>
         )

@@ -18,7 +18,7 @@ class Home extends Component {
         return (
             <div>
                 <div className="conduit-banner">
-                    <h1>Conduit</h1>
+                    <h1>conduit</h1>
                     <h5>A place to show your knowledge</h5>
                 </div>
 
@@ -29,11 +29,12 @@ class Home extends Component {
                         return (
                             <div className="article-container">
                                 <div className="article-list">
-                                    <Link to={`/SingleArticle/${article.slug}`}>
+                                    <Link to={`/SingleArticle/${article.slug}`} style={{ textDecoration: 'none' }}>
                                         <img className="user-image" src={article.author.image} />
                                         <span>{article.author.username}</span>
                                         <h2>{article.title}</h2>
-                                        <h4>{article.body}</h4> <br></br> <br></br>
+                                        <h4>{article.description}</h4> <br></br> <br></br>
+                                        <h6>Read more...</h6>
                                         <hr></hr>
                                     </Link>
                                 </div>

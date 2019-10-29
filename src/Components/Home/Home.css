@@ -1,20 +1,20 @@
 .conduit-banner {
   text-align: center;
-  font-size: 18;
+  font-size: 22px;
   color: white;
   font-weight: 700;
   background: #5cb85c;
-  padding: 7px 7px;
+  padding: 3px 3px;
 }
 .article-container {
   margin-top: 50px;
   width: 1000px;
   /* border: 1px solid black; */
   margin-left: 100px;
-} 
+}
 hr {
   width: 980px;
-  color: bisque;
+  color: rgb(218, 217, 216);
 }
 .user-image {
   width: 30px;
@@ -45,19 +45,28 @@ span {
   text-decoration: none;
 }
 h2 {
-  color: black;
+  color: rgb(80, 69, 69);
   text-decoration: none;
-
+  font-weight: 700;
+}
+h5 {
+  font-family: source sans pro, sans-serif;
+  font-size: 20px;
+  color: rgb(241, 237, 237);
+  font-weight: 300;
+}
+h6 {
+  margin: 0;
+  color: rgb(158, 156, 153);
 }
 h4 {
-  color: grey;
+  color: rgb(199, 195, 195);
   text-decoration: none;
-
 }
 body {
   text-decoration: none;
 }
-.list-tags{
+.list-tags {
   display: grid;
-  grid-row: 1/span 2;
+  grid-row: 1 / span 2;
 }

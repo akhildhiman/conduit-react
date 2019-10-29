@@ -8,10 +8,14 @@ input {
   width: 450px;
   padding: 17px;
   border: 1px solid rgb(199, 193, 193);
+  font-size: 20px;
+  color: rgb(75, 75, 72);
 }
 
 ::placeholder {
   font-size: 17px;
+  font-family: sans-serif;
+
 }
 
 button {
@@ -19,15 +23,16 @@ button {
   padding: 20px;
   background: #5cb85c;
   font-size: 18px;
+  color: white;
+}
+button:hover {
+  color: red;
 }
 .form-header {
   text-align: center;
 }
 h2 {
   margin-top: 30px;
-}
-h4 {
-  color: #5cb85c;
 }
 
 .btn {
