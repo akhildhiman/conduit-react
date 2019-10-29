@@ -21,7 +21,9 @@ class Tags extends Component {
             <div>{
                 tagArticle && tagArticle.map(article => {
                     return (
-                        <h1>{article.title}</h1>
+                        <div>
+                            {article.title}
+                        </div>
                     )
                 })
             }

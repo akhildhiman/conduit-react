@@ -1,4 +1,4 @@
-.home {
+.conduit-banner {
   text-align: center;
   font-size: 18;
   color: white;
@@ -6,6 +6,11 @@
   background: #5cb85c;
   padding: 7px 7px;
 }
+.user-image {
+  width: 30px;
+  border-radius: 50%;
+}
+
 .article-list {
   display: flex;
   justify-content: center;

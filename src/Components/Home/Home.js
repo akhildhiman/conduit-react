@@ -16,26 +16,30 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="home">
-                <h1>Conduit</h1>
-                <h5>A place to show your knowledge</h5>
-                {this.state.articlesArray && this.state.articlesArray.map(article => {
-                    return (
-                        <div className="article-list">
-                            <Link to={`/SingleArticle/${article.slug}`}>
-                                {/* <img src= {article.author.image} /> */}
-                                {article.author.username} <br></br>
-                                {article.title} <br></br>
-                                {article.body} <br></br> <br></br>
-                            </Link>
-                        </div>
-                    )
-                })}
+            <div>
+                <div className="conduit-banner">
+                    <h1>Conduit</h1>
+                    <h5>A place to show your knowledge</h5>
+                </div>
+
+                <div>
+                    {this.state.articlesArray && this.state.articlesArray.map(article => {
+                        return (
+                            <div className="article-list">
+                                <Link to={`/SingleArticle/${article.slug}`}>
+                                    <img className="user-image" src={article.author.image} />
+                                    {article.author.username} <br></br>
+                                    {article.title} <br></br>
+                                    {article.body} <br></br> <br></br>
+                                </Link>
+                            </div>
+                        )
+                    })}
+                </div>
                 <div className="list-tags">
                     <ListTags />
                 </div>
             </div>
-
         )
     }
 }

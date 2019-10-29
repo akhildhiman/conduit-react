@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom";
 import "./Register.css"
+import "../Login/Login"
 
 class Register extends Component {
     constructor() {
@@ -22,12 +23,12 @@ class Register extends Component {
                 password: this.state.password
             }
         }
-
+        
         fetch("https://conduit.productionready.io/api/users", {
             method: 'POST', // or 'PUT'
             body: JSON.stringify(body), // data can be `string` or {object}!e
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
             }
           })
         .then(response => response.json())
@@ -40,18 +41,6 @@ class Register extends Component {
             [name] : value //computed value of whatever it is in the name attribute
         })
     }
-
-
-    //     fetch("https://conduit.productionready.io/api/users", {
-    //         method: 'POST', // or 'PUT'
-    //         // body: JSON.stringify(data), // data can be `string` or {object}!e
-    //         headers: {
-    //           'Content-Type': 'application/json'
-    //         }
-    //       })
-    //     .then(response => response.json())
-    // }
-
 
     render() {
         return(

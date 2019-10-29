@@ -45,7 +45,6 @@ class Login extends Component {
          console.log(data))
         }
         
-        
     render() {
         return (
             <form className="form">
