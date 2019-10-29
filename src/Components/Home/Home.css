@@ -57,5 +57,7 @@ h4 {
 body {
   text-decoration: none;
 }
-Link {
+.list-tags{
+  display: grid;
+  grid-row: 1/span 2;
 }

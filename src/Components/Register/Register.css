@@ -1,0 +1,35 @@
+form {
+  display: grid;
+  justify-content: center;
+  margin-top: 120px;
+}
+input {
+  border-radius: 5px;
+  width: 450px;
+  padding: 17px;
+  border: 1px solid rgb(199, 193, 193);
+}
+
+::placeholder {
+  font-size: 17px;
+}
+
+button {
+  width: 120px;
+  padding: 20px;
+  background: #5cb85c;
+  font-size: 18px;
+}
+.form-header {
+  text-align: center;
+}
+h2 {
+  margin-top: 30px;
+}
+h4 {
+  color: #5cb85c;
+}
+
+.btn {
+  text-align: right;
+}

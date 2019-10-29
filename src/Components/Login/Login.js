@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 
 class Login extends Component {
-        state = {
-            email: "",
-            password: "",
-        }
+    state = {
+        email: "",
+        password: "",
+    }
 
     handleChange = (e) => {
         const { name, value } = e.target
@@ -39,31 +39,37 @@ class Login extends Component {
                 'Content-type': "application/json"
             }
         })
-        .then(response => response.json())
-        .then(data => data.user.token ? this.storeTokenAndRedirect(data.user.token) // // if the user has token, call the storeTokenAndRedirect function
-        :
-         console.log(data))
-        }
-        
+            .then(response => response.json())
+            .then(data => data.user.token ? this.storeTokenAndRedirect(data.user.token) // // if the user has token, call the storeTokenAndRedirect function
+                :
+                console.log(data))
+    }
+
     render() {
         return (
-            <form className="form">
-                <input type="text"
-                placeholder="Enter the email"
-                value={this.state.email}
-                name="email" 
-                onChange={this.handleChange} />
-                <br></br>
+            <div>
+                <div className="form-header">
+                    <h1>Sign In</h1>
+                    <h4>Need an account ?</h4>
+                </div>
+                <form className="form">
+                    <input type="text"
+                        placeholder="Enter the email"
+                        value={this.state.email}
+                        name="email"
+                        onChange={this.handleChange} />
+                    <br></br>
 
-                <input type="text"
-                placeholder="Enter the password"
-                value={this.state.password}
-                name="password"
-                onChange={this.handleChange} />
-                <br></br>
+                    <input type="text"
+                        placeholder="Enter the password"
+                        value={this.state.password}
+                        name="password"
+                        onChange={this.handleChange} />
+                    <br></br>
 
-                <button type="submit" onClick={this.handleSubmit}>Sign in</button>
-            </form>
+                    <button type="submit" onClick={this.handleSubmit}>Sign in</button>
+                </form>
+            </div>
         )
     }
 }

@@ -22,6 +22,8 @@ class Home extends Component {
                     <h5>A place to show your knowledge</h5>
                 </div>
 
+
+
                 <div>
                     {this.state.articlesArray && this.state.articlesArray.map(article => {
                         return (
@@ -39,9 +41,11 @@ class Home extends Component {
                         )
                     })}
                 </div>
+
                 <div className="list-tags">
                     <ListTags />
                 </div>
+
             </div>
         )
     }
