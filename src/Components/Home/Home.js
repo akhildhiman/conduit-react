@@ -25,13 +25,16 @@ class Home extends Component {
                 <div>
                     {this.state.articlesArray && this.state.articlesArray.map(article => {
                         return (
-                            <div className="article-list">
-                                <Link to={`/SingleArticle/${article.slug}`}>
-                                    <img className="user-image" src={article.author.image} />
-                                    {article.author.username} <br></br>
-                                    {article.title} <br></br>
-                                    {article.body} <br></br> <br></br>
-                                </Link>
+                            <div className="article-container">
+                                <div className="article-list">
+                                    <Link to={`/SingleArticle/${article.slug}`}>
+                                        <img className="user-image" src={article.author.image} />
+                                        <span>{article.author.username}</span>
+                                        <h2>{article.title}</h2>
+                                        <h4>{article.body}</h4> <br></br> <br></br>
+                                        <hr></hr>
+                                    </Link>
+                                </div>
                             </div>
                         )
                     })}
