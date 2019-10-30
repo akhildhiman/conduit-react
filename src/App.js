@@ -9,6 +9,7 @@ import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import SingleArticle from './Components/SingleArticle/SingleArticle';
 import Tags from './Components/Tags/Tags';
 import Settings from "./Components/Settings/Settings";
+import Profile from "./Components/Profile/Profile"
 
 class App extends React.Component {
   render() {
@@ -24,6 +25,7 @@ class App extends React.Component {
             <Route path="/SingleArticle/:slug" component={SingleArticle} />
             <Route path="/Tags/:tag" component={Tags} />
             <Route path="/Settings" component={Settings} />
+            <Route path="/Profile/:username" component={Profile} />
           </Switch>
         </Router>
       </>

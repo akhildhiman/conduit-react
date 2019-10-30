@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import "./Home.css"
-import { Link } from "react-router-dom"
-import ListTags from "../ListTags/ListTags"
+import "./Home.css";
+import { Link } from "react-router-dom";
+import ListTags from "../ListTags/ListTags";
+import Profile from "../Profile/Profile";
 
 class Home extends Component {
     state = {
@@ -22,18 +23,20 @@ class Home extends Component {
                     <h5>A place to show your knowledge</h5>
                 </div>
 
-                <div className="list-tags">
+                {/* <div className="list-tags">
                     <ListTags />
-                </div>
-                
+                </div> */}
+
                 <div>
                     {this.state.articlesArray && this.state.articlesArray.map(article => {
                         return (
                             <div className="article-container">
                                 <div className="article-list">
                                     <Link to={`/SingleArticle/${article.slug}`} style={{ textDecoration: 'none' }}>
-                                        <img className="user-image" src={article.author.image} />
-                                        <span>{article.author.username}</span>
+                                        <Link to={`/Profile/${article.author.username}`}>
+                                            <img className="user-image" src={article.author.image} />
+                                            <span>{article.author.username}</span>
+                                        </Link>
                                         <h2>{article.title}</h2>
                                         <h4>{article.description}</h4> <br></br> <br></br>
                                         <h6>Read more...</h6>
