@@ -14,6 +14,7 @@ class Settings extends Component {
                 "Authorization": `Token ${localStorage.Token}`
             }
         })
+            // if user is authorized
             .then(response => response.json())
             .then(data => data.user.token ? this.setState({ username: data.user.username, email: data.user.email }) : console.log("no user"))
     }
@@ -40,6 +41,7 @@ class Settings extends Component {
                 {/* How the username and email values are hardcoded */}
                 <div className="settings-input">
                     <input type="text"
+                        onChange={this.handleChange}
                         placeholder="URL of profile picture" />
 
                     <input type="text"
@@ -49,6 +51,7 @@ class Settings extends Component {
                     />
 
                     <textarea type="text"
+                        onChange={this.handleChange}
                         placeholder="Short bio about you" />
 
                     <input type="text"
@@ -56,8 +59,8 @@ class Settings extends Component {
                         name="email"
                         value={email} />
 
-
                     <input type="text"
+                        onChange={this.handleChange}
                         placeholder="New Password" />
                 </div>
 
