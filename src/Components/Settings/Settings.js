@@ -19,12 +19,13 @@ class Settings extends Component {
     }
 
     handleChange = (e) => {
-        const { name, value } = e.target.value
+        console.log("check handlechange")
+        const { name, value } = e.target
+        console.log(name, value)
         this.setState({
             [name]: value
         })
     }
-
 
     render() {
         const username = this.state.username
@@ -48,16 +49,16 @@ class Settings extends Component {
                     />
 
                     <textarea type="text"
-                    placeholder="Short bio about you" />
+                        placeholder="Short bio about you" />
 
                     <input type="text"
-                    onChange={this.handleChange}
-                    name="email"
-                    value={email} />
-                    
+                        onChange={this.handleChange}
+                        name="email"
+                        value={email} />
+
 
                     <input type="text"
-                    placeholder="New Password" />
+                        placeholder="New Password" />
                 </div>
 
                 <div style={{ textAlign: "center" }}>
