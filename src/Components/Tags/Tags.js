@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import ListTags from "../ListTags/ListTags"
+// import "./Tags.css"
+// import "./ListTags.css"
 
 class Tags extends Component {
     state = {
@@ -29,7 +31,11 @@ class Tags extends Component {
                                 <h4>{article.description}</h4> <br></br> <br></br>
                                 <h6>Read more...</h6>
                                 {/* {
-                                    tagArticle && tagArticle.map
+                                    tagArticle && tagArticle.map(tag => {
+                                        return (
+                                            <span></span>
+                                        )
+                                    })
                                 } */}
                                 <hr></hr>
                             </div>
