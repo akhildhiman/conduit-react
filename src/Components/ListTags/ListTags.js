@@ -8,12 +8,12 @@ class ListTags extends Component {
         tagList: null
     }
 
-
     componentDidMount() {
         fetch("https://conduit.productionready.io/api/tags")
             .then(response => response.json())
-            .then(data => this.setState({ tagList: data.tags }))
+                .then(data => this.setState({ tagList: data.tags }))
     }
+
 
     render() {
         console.log(this.state.tagList)

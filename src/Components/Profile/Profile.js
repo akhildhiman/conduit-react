@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import "./Profile.css"
+import UserArticles from "../UserArticles/UserArticles"
+import { Link } from "react-router-dom"
 
 class Profile extends Component {
     state = {
@@ -19,7 +21,7 @@ class Profile extends Component {
     }
 
     render() {
-        // console.log(this.state.profile && this.state.profile.username)
+        const username = this.state.profile && this.state.profile.profile.username
         console.log(this.state.profile)
         return (
             <div>
@@ -27,8 +29,16 @@ class Profile extends Component {
                     {<div className="user-info">
                         <img className="user-image" src={this.state.profile && this.state.profile.profile.image} />
                         <h2>{this.state.profile && this.state.profile.profile.username}</h2>
+
                     </div>
                     }
+                    <Link to={`/UserArticles/${username}`}>
+                        <div>
+                            
+                        </div>
+                    </Link>
+
+
                 </div>
             </div>
         )

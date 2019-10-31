@@ -10,6 +10,7 @@ import SingleArticle from './Components/SingleArticle/SingleArticle';
 import Tags from './Components/Tags/Tags';
 import Settings from "./Components/Settings/Settings";
 import Profile from "./Components/Profile/Profile"
+import UserArticles from './Components/UserArticles/UserArticles';
 
 class App extends React.Component {
   render() {
@@ -26,6 +27,7 @@ class App extends React.Component {
             <Route path="/Tags/:tag" component={Tags} />
             <Route path="/Settings" component={Settings} />
             <Route path="/Profile/:username" component={Profile} />
+            <Route path="/UserArticles/:username" component={UserArticles} />
           </Switch>
         </Router>
       </>
