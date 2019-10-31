@@ -31,9 +31,7 @@ class SingleArticle extends Component {
                     <Link style={linksStyle}>Edit Article</Link>
                     <Link style={linksStyle}>Delete Article</Link>
                 </div>
-
-
-
+                
                 <div>
                     {/* <div>
                         {article && article.title}

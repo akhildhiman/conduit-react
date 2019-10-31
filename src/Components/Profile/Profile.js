@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Header from "../Header/Header"
+import "./Profile.css"
 
 class Profile extends Component {
     state = {
@@ -15,13 +15,21 @@ class Profile extends Component {
             "Content-type": "application/json",
         })
             .then(response => response.json())
-                .then(data => console.log(data))
+            .then(data => this.setState({ profile: data }))
     }
 
     render() {
+        // console.log(this.state.profile && this.state.profile.username)
+        console.log(this.state.profile)
         return (
             <div>
-                <h1>Hello</h1>
+                <div>
+                    {<div className="user-info">
+                        <img className="user-image" src={this.state.profile && this.state.profile.profile.image} />
+                        <h2>{this.state.profile && this.state.profile.profile.username}</h2>
+                    </div>
+                    }
+                </div>
             </div>
         )
     }
