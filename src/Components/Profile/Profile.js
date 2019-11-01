@@ -37,12 +37,20 @@ class Profile extends Component {
                     </div>
                     }
 
-                    <div>
+                    <div><p style={{ textAlign: "center", color: "#5cb85c" }}>My articles</p>
                         {
-                            this.state.userArticles && this.state.userArticles.articles.map(article => {
+                            this.state.userArticles.articles && this.state.userArticles.articles.map(article => {
                                 return (
-                                    <p>{article.author.username}</p>
-                                    <p>{article.title}</p>
+                                    <div className="article-container">
+                                        <div className="article-list">
+                                            <img className="user-image" src={article.author.image} />
+                                            <span>{article.author.username}</span>
+                                            <h2>{article.title}</h2>
+                                            <h4>{article.description}</h4> <br></br> <br></br>
+                                            <h6>Read more...</h6>
+                                            <hr></hr>
+                                        </div>
+                                    </div>
                                 )
                             })
                         }
