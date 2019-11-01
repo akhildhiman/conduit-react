@@ -31,10 +31,10 @@ class Header extends Component {
                     localStorage.Token ?   // if the user is logged in, display logout
                         <div className="header-links">
                             <button onClick={this.handleLogout} className="btn-logout">Logout</button>
-                            <Link to="/">Home</Link>
-                            <Link to="/NewArticle">New Article</Link>
+                            <Link style={linksStyle} to="/">Home</Link>
+                            <Link style={linksStyle} to="/NewArticle">New Article</Link>
                             {/* <button>Settings</button> */}
-                            {<Link to="/Settings">Settings</Link>}
+                            {<Link style={linksStyle} to="/Settings">Settings</Link>}
                         </div>
                         :
 
