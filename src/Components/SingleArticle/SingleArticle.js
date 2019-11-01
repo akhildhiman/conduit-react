@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import "../NewArticle/NewArticle"
 import { Link } from "react-router-dom"
 import Header from "../Header/Header"
+import "./SingleArticle.css"
 
 const linksStyle = { textDecoration: "none", color: "black", padding: "0 10px", color: "rgb(92,87,87)", fontWeight: "300" };
 
@@ -19,7 +20,7 @@ class SingleArticle extends Component {
 
     render() {
         const article = this.state.article
-        // console.log(article)
+        console.log(article)
         return (
 
             <div className="single-article-banner">

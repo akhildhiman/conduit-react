@@ -31,7 +31,6 @@ class ListTags extends Component {
                 }
             </div>
         )
-
     }
 }
 
