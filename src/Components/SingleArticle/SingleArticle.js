@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import Header from "../Header/Header"
 import "./SingleArticle.css"
 
-const linksStyle = { textDecoration: "none", color: "black", padding: "0 10px", color: "rgb(92,87,87)", fontWeight: "300" };
+const linksStyle = { textDecoration: "none", color: "black", padding: "0 10px", color: "rgb(92,87,87)", fontWeight: "300", color: "red" };
 
 class SingleArticle extends Component {
     state = {
@@ -22,25 +22,25 @@ class SingleArticle extends Component {
         const article = this.state.article
         console.log(article)
         return (
-
-            <div className="single-article-banner">
-                <div>
-                    {article && article.title}
-                </div>
-                <div>
-                    {article && article.author.username}
-                    <Link style={linksStyle}>Edit Article</Link>
-                    <Link style={linksStyle}>Delete Article</Link>
-                </div>
-                
-                <div>
-                    {/* <div>
+            <>
+                <div className="single-article-banner">
+                    <div className="article-title">
                         {article && article.title}
-                        {article && article.createdAt.toLocaleString()}
+                    </div>
+                    <div>
+                        <span><img className="user-image" src={article && article.author.image}></img></span>
                         {article && article.author.username}
-                    </div> */}
+                        <div className="article-banner-links">
+                            <Link style={linksStyle}>Edit Article</Link>
+                            <Link to=""style={linksStyle}>Delete Article</Link>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+                <div className="article-description">
+                    {article && article.description}
+                </div>
+            </>
         )
     }
 }

@@ -4,6 +4,20 @@
 
 .single-article-banner {
   font-size: 22px;
-  background: #d8d8d8;
+  background: #333;
   border: 1px black;
+  padding: 50px;
+  color: #ffffff;
+}
+.article-title {
+  text-align: left;
+  color: #ffffff;
+  font-size: 45px;
+  padding-bottom: 18px;
+}
+.article-banner-links {
+  text-align: right;
+}
+.article-description {
+  padding: 50px;
 }
