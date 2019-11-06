@@ -21,3 +21,11 @@
 .article-description {
   padding: 50px;
 }
+
+.comment-section {
+  text-align: center;
+}
+.btn-comment {
+  height: 20px;
+  color: none;
+}

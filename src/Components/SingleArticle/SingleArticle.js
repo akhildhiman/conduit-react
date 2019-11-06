@@ -3,6 +3,7 @@ import "../NewArticle/NewArticle"
 import { Link } from "react-router-dom"
 import Header from "../Header/Header"
 import "./SingleArticle.css"
+import Comments from '../Comments/Comments'
 
 const linksStyle = { textDecoration: "none", color: "black", padding: "0 10px", color: "rgb(92,87,87)", fontWeight: "300", color: "red" };
 
@@ -10,14 +11,15 @@ const linksStyle = { textDecoration: "none", color: "black", padding: "0 10px", 
 class SingleArticle extends Component {
     state = {
         article: null,
-        favorited: null
+        favorited: null,
+        count: 0
     }
 
     componentDidMount() {
         var slug = this.props.match.params.slug; // slug coming from params in the match object
         fetch(`https://conduit.productionready.io/api/articles/${slug}`)
             .then(response => response.json())
-            .then(data => this.setState({ article: data.article, favorited: data.article.favorited }))
+            .then(data => this.setState({ article: data.article }))
     }
 
     handleFavoriteArticle = () => {
@@ -28,7 +30,7 @@ class SingleArticle extends Component {
             headers: {
                 "Content-type": "application/json",
                 "Authorization": `Token ${localStorage.Token}`
-                }
+            }
         })
             .then(response => response.json())
             .then(data => this.setState({ favorited: true }))
@@ -40,8 +42,8 @@ class SingleArticle extends Component {
         fetch(`https://conduit.productionready.io/api/articles/${slug}/favorite`, {
             method: "DELETE",
             headers: {
-            "Content-type": "application/json",
-            "Authorization": `Token ${localStorage.Token}`
+                "Content-type": "application/json",
+                "Authorization": `Token ${localStorage.Token}`
             }
         })
             .then(response => response.json())
@@ -49,8 +51,11 @@ class SingleArticle extends Component {
     }
 
     render() {
+        // var slug = this.props.match.params.slug
+        // console.log(article)
         const article = this.state.article
-        console.log(article)
+        const slug = article && article.slug
+        // console.log(slug)
         return (
             <>
                 <div className="single-article-banner">
@@ -78,6 +83,24 @@ class SingleArticle extends Component {
                 <div className="article-description">
                     {article && article.description}
                 </div>
+
+                <hr></hr>
+                <div>
+                    {
+                        article && article.slug ?
+                          <Comments slug={article && article.slug} />
+
+                            :
+                            <div style={{textAlign: "center"}}>
+                                <p><b>Sign Up</b> or <b>Sign In</b> to add comments</p>
+                            </div>
+
+                    }
+                </div>
+
+
+
+
             </>
         )
     }
