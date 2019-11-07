@@ -11,6 +11,7 @@ import Tags from './Components/Tags/Tags';
 import Settings from "./Components/Settings/Settings";
 import Profile from "./Components/Profile/Profile"
 import Comments from "./Components/Comments/Comments"
+import Follow from "./Components/Follow/Follow"
 
 class App extends React.Component {
   render() {
@@ -27,7 +28,7 @@ class App extends React.Component {
             <Route path="/Tags/:tag" component={Tags} />
             <Route path="/Settings" component={Settings} />
             <Route path="/Profile/:username" component={Profile} />
-            <Route path="/Comments/:Slug" component={Comments} />
+            <Route path="/Comments/:slug" component={Comments} />
           </Switch>
         </Router>
       </>

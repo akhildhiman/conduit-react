@@ -59,6 +59,7 @@ class NewArticle extends Component {
 
                 <textarea onChange={this.handleChange}
                     type="text"
+                    cols="58"
                     placeholder="Write your article"
                     name="body"
                     value={this.state.body} />

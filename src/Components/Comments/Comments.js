@@ -12,7 +12,7 @@ class Comments extends Component {
 
     componentDidMount() {
         var slug = this.props.slug
-        console.log(slug)
+        // console.log(slug)
         fetch(`https://conduit.productionready.io/api/articles/${slug}/comments`, {
             method: "GET",
             "Content-type": "application/json",
@@ -25,16 +25,16 @@ class Comments extends Component {
 
 
     render() {
-        console.log(this.state.comment.comments)
+        // console.log(this.state.comment.comments)
         const comment = this.state.comment.comments && this.state.comment.comments.map(comment => comment.body)
         const commentAuthor = this.state.comment.comments && this.state.comment.comments.map(comment => comment.author.username)
         const commentImage = this.state.comment.comments && this.state.comment.comments.map(comment => comment.author.image)
         return (
             <div>
-                <div style={{ textAlign: "center", color: "red"} }>
+                <div style={{ textAlign: "center", color: "red", border: "1px solid black", width: "800px"} }>
                     <p>{comment}</p>
-                    <p>{commentAuthor}</p>
-                    <span><img className="user-image" src={commentImage} /></span>
+                    <img className="user-image" src={commentImage} />
+                    <span>{commentAuthor}</span>
                 </div>
             </div>
         )

@@ -1,11 +1,12 @@
 import React, { Component } from "react"
+import { Link } from "react-router-dom"
 import "./Profile.css"
-
 
 class Profile extends Component {
     state = {
         profile: null,
-        userArticles: []
+        userArticles: [],
+        isFollowed: false
     }
 
     componentDidMount() {
@@ -23,17 +24,56 @@ class Profile extends Component {
             .then(userdata => this.setState({ userArticles: userdata }))
     }
 
+    handleFollow = () => {
+        const username = this.props.match.params.username
+        fetch(`https://conduit.productionready.io/api/profiles/${username}/follow`, {
+            method: "POST",
+            headers: {
+                "Authorization": `Token ${localStorage.Token}`,
+                "Content-type": "application/json"
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                const Follow = data.profile.following;
+                console.log(Follow)
+                this.setState({ ...this.state, isFollowed: Follow })
+            })
+    }
+
+    handleUnFollow = () => {
+        const username = this.props.match.params.username
+        fetch(`https://conduit.productionready.io/api/profiles/${username}/follow`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": `Token ${localStorage.Token}`,
+                "Content-type": "application/json"
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                const UnFollow = data.profile.following;
+                console.log(UnFollow)
+                this.setState({ ...this.state, isFollowed: UnFollow })
+            })
+    }
+
+
     render() {
         const username = this.state.profile && this.state.profile.profile.username
-        console.log(this.state.userArticles)
-        console.log(this.state.profile)
-
+        const following = this.state.profile && this.state.profile.profile.following
+        // console.log(this.state.userArticles)
+        // console.log(this.state.profile)
         return (
             <div>
                 <div>
                     {<div className="user-info">
                         <img className="user-image" src={this.state.profile && this.state.profile.profile.image} />
                         <h2>{this.state.profile && this.state.profile.profile.username}</h2>
+
+                        {this.state.isFollowed ? <button onClick={this.handleUnFollow}>Unfollow</button> : <button onClick={this.handleFollow}>Follow</button>}
+
+
                     </div>
                     }
 

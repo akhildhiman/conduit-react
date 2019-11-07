@@ -84,17 +84,25 @@ class SingleArticle extends Component {
                     {article && article.description}
                 </div>
 
-                <hr></hr>
                 <div>
                     {
                         article && article.slug ?
-                          <Comments slug={article && article.slug} />
+                            <Comments slug={article && article.slug} />
 
                             :
-                            <div style={{textAlign: "center"}}>
+                            null
+                    }
+
+                    {
+                        localStorage.Token ?
+                            <div className="comment-section">
+                                <textarea />
+                                <button className="btn-comment">Post Comment</button>
+                            </div>
+                            :
+                            <div style={{ textAlign: "center" }}>
                                 <p><b>Sign Up</b> or <b>Sign In</b> to add comments</p>
                             </div>
-
                     }
                 </div>
 

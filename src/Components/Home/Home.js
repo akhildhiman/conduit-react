@@ -20,7 +20,7 @@ class Home extends Component {
             <div>
                 <div className="conduit-banner">
                     <h1>conduit</h1>
-                    <h5>A place to show your knowledge</h5>
+                    <h5>A place to share your knowledge</h5>
                 </div>
 
                 {/* <div className="list-tags">
