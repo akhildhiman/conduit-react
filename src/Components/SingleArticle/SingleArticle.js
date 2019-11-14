@@ -12,7 +12,8 @@ class SingleArticle extends Component {
     state = {
         article: null,
         favorited: null,
-        count: 0
+        count: 0,
+        comments: ""
     }
 
     componentDidMount() {
@@ -50,12 +51,36 @@ class SingleArticle extends Component {
             .then(data => this.setState({ favorited: false }))
     }
 
+
+    handleChange = (event) => {
+        this.setState({ ...this.state, comments: event.target.value })
+    }
+
+    handleComment = () => {
+        const slug = this.props.match.params.slug
+        const Comments = {
+            "comment": {
+                "body": this.state.comments
+            }
+        }
+        fetch(`https://conduit.productionready.io/api/articles/${slug}/comments`, {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+                "Authorization": `Token ${localStorage.Token}`
+            },
+            body: JSON.stringify(Comments)
+        }).then(res => res.json())
+            .then(comnt => {
+                const rescmnt = comnt.comment.body;
+                this.setState({ ...this.setState, comments: rescmnt })
+            })
+    }
+
     render() {
-        // var slug = this.props.match.params.slug
-        // console.log(article)
         const article = this.state.article
         const slug = article && article.slug
-        // console.log(slug)
+        console.log(this.state.comments)
         return (
             <>
                 <div className="single-article-banner">
@@ -96,19 +121,17 @@ class SingleArticle extends Component {
                     {
                         localStorage.Token ?
                             <div className="comment-section">
-                                <textarea />
-                                <button className="btn-comment">Post Comment</button>
+                                <textarea value={this.state.comments} onChange={this.handleChange} />
+                                <button className="btn-comment" onClick={this.handleComment}>Post Comment</button>
+                                {this.state && this.state.comments ? <h2>{this.state.comments}</h2> : null}
                             </div>
                             :
+
                             <div style={{ textAlign: "center" }}>
                                 <p><b>Sign Up</b> or <b>Sign In</b> to add comments</p>
                             </div>
                     }
                 </div>
-
-
-
-
             </>
         )
     }

@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { connect } from "react-redux"
 
 class Login extends Component {
     state = {
@@ -75,4 +76,9 @@ class Login extends Component {
 }
 
 
-export default Login
+const mapStateToProps = state => {
+    return state
+}
+
+
+export default connect(mapStateToProps)(Login)

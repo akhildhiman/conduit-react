@@ -4,7 +4,6 @@
     padding: 30px 0;
     font-size: 25px;
 }
-.comment-btn {
-    height: 30px;
-    width: 180px;
+.follow-btn {
+    background: grey;
 }
