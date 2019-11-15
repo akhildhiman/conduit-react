@@ -3,6 +3,7 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import ListTags from "../ListTags/ListTags";
 import Profile from "../Profile/Profile";
+import {connect} from "react-redux"
 
 class Home extends Component {
     state = {
@@ -16,6 +17,7 @@ class Home extends Component {
     }
 
     render() {
+        console.log(this.props, "inside render home")
         return (
             <div>
                 <div className="conduit-banner">
@@ -55,4 +57,9 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = state => {
+    return state
+}
+
+
+export default connect(mapStateToProps)(Home)

@@ -1,7 +1,12 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 
+
 class Login extends Component {
+    constructor(props) {
+        super(props)
+    }
+
     state = {
         email: "",
         password: "",
@@ -41,12 +46,17 @@ class Login extends Component {
             }
         })
             .then(response => response.json())
-            .then(data => data.user.token ? this.storeTokenAndRedirect(data.user.token) // // if the user has token, call the storeTokenAndRedirect function
-                :
-                console.log(data))
+            .then(data => {
+                this.props.dispatch({ type: "USER", payload: data })
+                this.storeTokenAndRedirect(data.user.token);
+            })
+
+
+        // console.log(data))
     }
 
     render() {
+        console.log(this.props, "render in login")
         return (
             <div>
                 <div className="form-header">

@@ -1,14 +1,23 @@
-import { store } from "react-redux"
-import {createStore} from "redux"
+import { createStore } from "redux"
 
-const state = {
-    user = {
-        "username": "",
-        "email": "",
-        "password": ""
+const user = {
+    "username": "",
+    "email": "",
+    "password": ""
+}
+
+function reducer(state = user, action) {
+    switch(action.type) {
+        case "USER":
+            return {...state, user: action.payload}
+        default:
+            return state
     }
 }
 
 
+const store = createStore(reducer)
+
 
 export default store
+

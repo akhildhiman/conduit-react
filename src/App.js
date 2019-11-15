@@ -13,6 +13,7 @@ import Profile from "./Components/Profile/Profile"
 import Comments from "./Components/Comments/Comments"
 import Follow from "./Components/Follow/Follow"
 
+
 class App extends React.Component {
   render() {
     return (
