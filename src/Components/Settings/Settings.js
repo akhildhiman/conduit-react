@@ -20,13 +20,36 @@ class Settings extends Component {
     }
 
     handleChange = (e) => {
-        console.log("check handlechange")
         const { name, value } = e.target
-        console.log(name, value)
         this.setState({
             [name]: value
         })
     }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        const body = {
+            "user": {
+                "email": this.state.email,
+                "username": this.state.username,
+                "password": this.state.password,
+                "bio": this.state.bio,
+                "image": this.state.image
+            }
+        }
+
+        fetch("https://conduit.productionready.io/api/user", {
+            method: "PUT",
+            body: JSON.stringify(body),
+            headers: {
+                "Content-type": "application/json",
+                "Authorization": `Token ${localStorage.Token}`
+            }
+        }).then(res => res.json())
+            .then(data => this.setState({ user: data }))
+            this.props.history.push("/")
+    }
+
 
     render() {
         const username = this.state.username
@@ -55,7 +78,7 @@ class Settings extends Component {
                         placeholder="Short bio about you" />
 
                     <input type="text"
-                        onChange={this.handleChange}
+                        onChange={this.handleChange} const
                         name="email"
                         value={email} />
 
@@ -65,7 +88,7 @@ class Settings extends Component {
                 </div>
 
                 <div style={{ textAlign: "center" }}>
-                    <button type="submit">Update Settings</button>
+                    <button onClick={this.handleSubmit} type="submit">Update Settings</button>
                 </div>
             </div>
 

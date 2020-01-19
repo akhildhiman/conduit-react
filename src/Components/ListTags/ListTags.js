@@ -16,7 +16,6 @@ class ListTags extends Component {
 
 
     render() {
-        console.log(this.state.tagList)
         const tagList = this.state.tagList
         return (
             <div>

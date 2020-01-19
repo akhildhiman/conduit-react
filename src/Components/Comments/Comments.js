@@ -12,7 +12,6 @@ class Comments extends Component {
 
     componentDidMount() {
         var slug = this.props.slug
-        // console.log(slug)
         fetch(`https://conduit.productionready.io/api/articles/${slug}/comments`, {
             method: "GET",
             "Content-type": "application/json",
@@ -25,16 +24,21 @@ class Comments extends Component {
 
 
     render() {
-        // console.log(this.state.comment.comments)
-        const comment = this.state.comment.comments && this.state.comment.comments.map(comment => comment.body)
-        const commentAuthor = this.state.comment.comments && this.state.comment.comments.map(comment => comment.author.username)
-        const commentImage = this.state.comment.comments && this.state.comment.comments.map(comment => comment.author.image)
+        const comments = this.state.comment.comments && this.state.comment.comments
         return (
             <div>
-                <div style={{ textAlign: "center", color: "red", border: "1px solid black", width: "800px"} }>
-                    <p>{comment}</p>
-                    <img className="user-image" src={commentImage} />
-                    <span>{commentAuthor}</span>
+                <div>
+                    {
+                        comments && comments.map(comment => {
+                            return (
+                                <div style={{ color: "red", border: "1px solid grey",marginLeft: "270px", paddingTop: "20px",paddingLeft: "50px", width: "700px"}}>
+                                    <span><img className="user-image"src={comment.author.image}></img></span>
+                                    <span>{comment.author.username}</span><br></br>
+                                    <p>{comment.body}</p>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
         )

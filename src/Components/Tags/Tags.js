@@ -16,7 +16,6 @@ class Tags extends Component {
     }
 
     render() {
-        console.log(this.state.tagArticles)
         const tagArticle = this.state.tagArticles
 
         return (

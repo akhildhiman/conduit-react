@@ -52,11 +52,9 @@ class Login extends Component {
             })
 
 
-        // console.log(data))
     }
 
     render() {
-        console.log(this.props, "render in login")
         return (
             <div>
                 <div className="form-header">

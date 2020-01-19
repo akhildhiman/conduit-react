@@ -36,7 +36,6 @@ class Profile extends Component {
             .then(response => response.json())
             .then(data => {
                 const Follow = data.profile.following;
-                console.log(Follow)
                 this.setState({ ...this.state, isFollowed: Follow })
             })
     }
@@ -53,7 +52,6 @@ class Profile extends Component {
             .then(response => response.json())
             .then(data => {
                 const UnFollow = data.profile.following;
-                console.log(UnFollow)
                 this.setState({ ...this.state, isFollowed: UnFollow })
             })
     }
@@ -62,18 +60,15 @@ class Profile extends Component {
     render() {
         const username = this.state.profile && this.state.profile.profile.username
         const following = this.state.profile && this.state.profile.profile.following
-        // console.log(this.state.userArticles)
-        // console.log(this.state.profile)
+        const bio = this.state.profile && this.state.profile.profile.bio
         return (
             <div>
                 <div>
                     {<div className="user-info">
                         <img className="user-image" src={this.state.profile && this.state.profile.profile.image} />
                         <h2>{this.state.profile && this.state.profile.profile.username}</h2>
-
+                        <h6>{bio}</h6><br></br>
                         {this.state.isFollowed ? <button onClick={this.handleUnFollow}>Unfollow</button> : <button onClick={this.handleFollow}>Follow</button>}
-
-
                     </div>
                     }
 

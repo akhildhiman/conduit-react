@@ -1,28 +1,27 @@
-import React, { Component } from "react"
+// import React, { Component } from "react"
 
-class Follow extends Component {
-    state = {
-        profile: ""
-    }
+// class Follow extends Component {
+//     state = {
+//         profile: ""
+//     }
 
-    componentDidMount() {
-        var username = this.props.match.params.username
+//     componentDidMount() {
+//         var username = this.props.match.params.username
  
-    }
+//     }
 
     
 
-    render() {
-        console.log(this.state.profile)
-        return (
-            <div>
+//     render() {
+//         return (
+//             <div>
 
 
-            </div>
-        )
-    }
-}
+//             </div>
+//         )
+//     }
+// }
 
 
 
-export default Follow
+// export default Follow

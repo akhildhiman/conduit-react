@@ -7,7 +7,6 @@ import Comments from '../Comments/Comments'
 
 const linksStyle = { textDecoration: "none", color: "black", padding: "0 10px", color: "rgb(92,87,87)", fontWeight: "300", color: "red" };
 
-
 class SingleArticle extends Component {
     state = {
         article: null,
@@ -25,7 +24,6 @@ class SingleArticle extends Component {
 
     handleFavoriteArticle = () => {
         var slug = this.props.match.params.slug
-        console.log(localStorage.Token)
         fetch(`https://conduit.productionready.io/api/articles/${slug}/favorite`, {
             method: "POST",
             headers: {
@@ -39,7 +37,6 @@ class SingleArticle extends Component {
 
     handleUnfavoriteArticle = () => {
         var slug = this.props.match.params.slug
-        console.log(localStorage.Token)
         fetch(`https://conduit.productionready.io/api/articles/${slug}/favorite`, {
             method: "DELETE",
             headers: {
@@ -79,8 +76,8 @@ class SingleArticle extends Component {
 
     render() {
         const article = this.state.article
+        const username = this.state.article && this.state.article.author.username
         const slug = article && article.slug
-        console.log(this.state.comments)
         return (
             <>
                 <div className="single-article-banner">
@@ -89,21 +86,21 @@ class SingleArticle extends Component {
                     </div>
                     <div>
                         <span><img className="user-image" src={article && article.author.image}></img></span>
-                        {article && article.author.username}
-
+                        <Link style={{ color: "white" }} to={`/Profile/{article.author.username}`}>{username}</Link>
                         <div className="article-banner-links">
-                            <Link style={linksStyle}>Follow </Link>
+                            {/* <Link style={linksStyle}>Follow </Link> */}
 
-                            {
-                                this.state.favorited ?
-                                    <button onClick={this.handleFavoriteArticle} style={linksStyle}>Favorite Article</button>
+                            {/* { */}
+                            {/* // this.state.favorited ? */}
+                            {/* // <button onClick={this.handleFavoriteArticle} style={linksStyle}>Favorite Article</button> */}
 
-                                    :
-                                    <button onClick={this.handleUnfavoriteArticle} style={linksStyle}>Unfavorite Article</button>
-                            }
+                            {/* : */}
+                            {/* // <button onClick={this.handleUnfavoriteArticle} style={linksStyle}>Unfavorite Article</button> */}
+                            {/* } */}
                         </div>
                     </div>
                 </div>
+
 
                 <div className="article-description">
                     {article && article.description}
@@ -122,8 +119,7 @@ class SingleArticle extends Component {
                         localStorage.Token ?
                             <div className="comment-section">
                                 <textarea value={this.state.comments} onChange={this.handleChange} />
-                                <button className="btn-comment" onClick={this.handleComment}>Post Comment</button>
-                                {this.state && this.state.comments ? <h2>{this.state.comments}</h2> : null}
+                                <button className="btn-comment" onClick={this.handleComment}>Comment</button>
                             </div>
                             :
 

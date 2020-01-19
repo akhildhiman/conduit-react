@@ -8,7 +8,7 @@ import "../NewArticle/NewArticle";
 import "../Settings/Settings"
 
 
-const logoStyle = { textDecoration: "none", color: "#5cb85c", fontSize: "22px" };
+const logoStyle = { textDecoration: "none", color: "#5cb85c", fontSize: "22px", marginTop: "20px", marginRight: "400px" };
 const linksStyle = { textDecoration: "none", color: "black", padding: "0 10px", color: "rgb(92,87,87)", fontWeight: "300" };
 
 class Header extends Component {
@@ -30,11 +30,10 @@ class Header extends Component {
                 {
                     localStorage.Token ?   // if the user is logged in, display logout
                         <div className="header-links">
-                            <button onClick={this.handleLogout} className="btn-logout">Logout</button>
                             <Link style={linksStyle} to="/">Home</Link>
                             <Link style={linksStyle} to="/NewArticle">New Article</Link>
-                            {/* <button>Settings</button> */}
                             {<Link style={linksStyle} to="/Settings">Settings</Link>}
+                            <button onClick={this.handleLogout} className="btn-logout">Logout</button>
                         </div>
                         :
 

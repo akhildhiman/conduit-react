@@ -17,7 +17,6 @@ class Home extends Component {
     }
 
     render() {
-        console.log(this.props, "inside render home")
         return (
             <div>
                 <div className="conduit-banner">
