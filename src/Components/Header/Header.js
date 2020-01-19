@@ -8,7 +8,7 @@ import "../NewArticle/NewArticle";
 import "../Settings/Settings"
 
 
-const logoStyle = { textDecoration: "none", color: "#5cb85c", fontSize: "22px", marginTop: "20px", marginRight: "400px" };
+const logoStyle = { textDecoration: "none", color: "#5cb85c", fontSize: "22px" };
 const linksStyle = { textDecoration: "none", color: "black", padding: "0 10px", color: "rgb(92,87,87)", fontWeight: "300" };
 
 class Header extends Component {
