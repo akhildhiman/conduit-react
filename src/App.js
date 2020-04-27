@@ -1,18 +1,16 @@
-import React from 'react';
-import './App.css';
-import Register from './Components/Register/Register';
-import Login from './Components/Login/Login';
-import Header from './Components/Header/Header';
-import Home from './Components/Home/Home';
-import NewArticle from './Components/NewArticle/NewArticle';
+import React from "react";
+import "./App.css";
+import Register from "./Components/Register/Register";
+import Login from "./Components/Login/Login";
+import Header from "./Components/Header/Header";
+import Home from "./Components/Home/Home";
+import NewArticle from "./Components/NewArticle/NewArticle";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
-import SingleArticle from './Components/SingleArticle/SingleArticle';
-import Tags from './Components/Tags/Tags';
+import SingleArticle from "./Components/SingleArticle/SingleArticle";
+import Tags from "./Components/Tags/Tags";
 import Settings from "./Components/Settings/Settings";
-import Profile from "./Components/Profile/Profile"
-import Comments from "./Components/Comments/Comments"
-import Follow from "./Components/Follow/Follow"
-
+import Profile from "./Components/Profile/Profile";
+import Comments from "./Components/Comments/Comments";
 
 class App extends React.Component {
   render() {
@@ -33,9 +31,8 @@ class App extends React.Component {
           </Switch>
         </Router>
       </>
-    )
+    );
   }
 }
-
 
 export default App;

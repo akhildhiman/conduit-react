@@ -5,49 +5,72 @@ import "../Register/Register";
 import "../Login/Login";
 import "../Home/Home";
 import "../NewArticle/NewArticle";
-import "../Settings/Settings"
+import "../Settings/Settings";
 
+const logoStyle = {
+  textDecoration: "none",
+  color: "#5cb85c",
+  fontSize: "22px",
+};
 
-const logoStyle = { textDecoration: "none", color: "#5cb85c", fontSize: "22px" };
-const linksStyle = { textDecoration: "none", color: "black", padding: "0 10px", color: "rgb(92,87,87)", fontWeight: "300" };
+const linksStyle = {
+  textDecoration: "none",
+  color: "black",
+  padding: "0 10px",
+  color: "rgb(92,87,87)",
+  fontWeight: "300",
+};
 
 class Header extends Component {
+  handleLogout = () => {
+    // when clicked on logout, clear the localstorage and redirect to the home page
+    localStorage.clear();
+    this.redirect();
+  };
 
-    handleLogout = () => { // when clicked on logout, clear the localstorage and redirect to the home page
-        localStorage.clear();
-        this.redirect()
-    }
+  redirect = () => {
+    this.props.history.push("/");
+  };
 
-    redirect = () => {
-        this.props.history.push("/")
-    }
-
-
-    render() {
-        return (
-            <div className="header">
-                <Link style={logoStyle} to="/">conduit</Link>
-                {
-                    localStorage.Token ?   // if the user is logged in, display logout
-                        <div className="header-links">
-                            <Link style={linksStyle} to="/">Home</Link>
-                            <Link style={linksStyle} to="/NewArticle">New Article</Link>
-                            {<Link style={linksStyle} to="/Settings">Settings</Link>}
-                            <button onClick={this.handleLogout} className="btn-logout">Logout</button>
-                        </div>
-                        :
-
-                        <div className="header-links">
-                            <Link to="/" style={linksStyle}>Home</Link>
-                            <Link to="/Register" style={linksStyle}>Sign up</Link>
-                            <Link to="/Login" style={linksStyle}>Sign in</Link>
-                        </div>
-                }
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className="header">
+        <Link style={logoStyle} to="/">
+          conduit
+        </Link>
+        {localStorage.Token ? ( // if the user is logged in, display logout
+          <div className="header-links">
+            <Link style={linksStyle} to="/">
+              Home
+            </Link>
+            <Link style={linksStyle} to="/NewArticle">
+              New Article
+            </Link>
+            {
+              <Link style={linksStyle} to="/Settings">
+                Settings
+              </Link>
+            }
+            <button onClick={this.handleLogout} className="btn-logout">
+              Logout
+            </button>
+          </div>
+        ) : (
+          <div className="header-links">
+            <Link to="/" style={linksStyle}>
+              Home
+            </Link>
+            <Link to="/Register" style={linksStyle}>
+              Sign up
+            </Link>
+            <Link to="/Login" style={linksStyle}>
+              Sign in
+            </Link>
+          </div>
+        )}
+      </div>
+    );
+  }
 }
-
-
 
 export default withRouter(Header);

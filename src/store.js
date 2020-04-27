@@ -1,23 +1,20 @@
-import { createStore } from "redux"
+import { createStore } from "redux";
 
 const user = {
-    "username": "",
-    "email": "",
-    "password": ""
-}
+  username: "",
+  email: "",
+  password: "",
+};
 
 function reducer(state = user, action) {
-    switch(action.type) {
-        case "USER":
-            return {...state, user: action.payload}
-        default:
-            return state
-    }
+  switch (action.type) {
+    case "USER":
+      return { ...state, user: action.payload };
+    default:
+      return state;
+  }
 }
 
+const store = createStore(reducer);
 
-const store = createStore(reducer)
-
-
-export default store
-
+export default store;
